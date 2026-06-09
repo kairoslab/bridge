@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+  CONTACT PAGE
+  ------------------------------------------------------------
+  By default this page shows a clickable email link — nothing to
+  maintain and no third-party account needed.
+
+  Want a real fill-in form instead? Scroll down to the comment block
+  marked "OPTIONAL CONTACT FORM" and follow the instructions there.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — [Your Name]</title>
+  <meta name="description" content="Get in touch to ask a question or schedule math tutoring.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-art"></div>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">[Your Name]</a>
+      <p class="tagline">Mathematics tutoring · middle school, high school &amp; college</p>
+      <nav class="site-nav">
+        <a href="index.html">About</a>
+        <a href="services.html">Tutoring</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Get in Touch</h1>
+      <p class="lead">
+        Have a question or want to schedule a session? I'd love to hear from you.
+      </p>
+
+      <!-- ===== CONTACT DETAILS — edit these ===== -->
+      <p class="contact-line">
+        <span class="contact-label">Email</span>
+        <a href="mailto:[you@example.com]">[you@example.com]</a>
+      </p>
+      <p class="contact-line">
+        <span class="contact-label">Phone</span>
+        [(555) 555-5555 — or delete this whole line if you'd rather not list one]
+      </p>
+
+      <p style="margin-top:24px; color:var(--color-muted);">
+        When you reach out, it helps to include the student's grade level, the
+        topic you'd like help with, and your general availability.
+      </p>
+
+      <!-- ============================================================
+           OPTIONAL CONTACT FORM
+           ------------------------------------------------------------
+           GitHub Pages can't process a form by itself, but a free
+           service called Formspree can email submissions to you.
+
+           To enable it:
+           1. Make a free account at https://formspree.io
+           2. Create a form; it gives you an ID like  xmyzabcd
+           3. Delete the email/phone lines above if you want, then
+              REMOVE the two lines that say  REMOVE-TO-ENABLE  below.
+           4. Replace YOUR_FORM_ID with your real ID.
+           ============================================================ -->
+      <!-- REMOVE-TO-ENABLE
+      <h2>Send a Message</h2>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <p><label>Your name<br><input type="text" name="name" required></label></p>
+        <p><label>Your email<br><input type="email" name="email" required></label></p>
+        <p><label>Message<br><textarea name="message" rows="5" required></textarea></label></p>
+        <p><button type="submit">Send</button></p>
+      </form>
+      REMOVE-TO-ENABLE -->
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © <span id="year">2026</span> [Your Name] · Math Tutoring
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

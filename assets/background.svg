@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  PLACEHOLDER BACKGROUND ILLUSTRATION
+
+  This is a simple, hand-drawn-style math doodle in black "pen"
+  strokes. It's only a stand-in.
+
+  TO USE YOUR OWN ART: replace this file with your illustration.
+  - Keep the file named  background.svg  (an SVG keeps it crisp),
+    OR name it background.png / background.jpg and update the
+    filename in styles.css (the background-image line).
+  - Black lines on a transparent/white background work best with
+    the light theme.
+  - Adjust how faint it looks with the bg-art-opacity value in styles.css.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none"
+     stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+
+  <!-- coordinate axes -->
+  <path d="M120 320 H700"/>
+  <path d="M180 360 V60"/>
+
+  <!-- a parabola y = x^2 -->
+  <path d="M210 300 Q400 -40 590 300" stroke-width="3.5"/>
+
+  <!-- a triangle -->
+  <path d="M470 300 L560 150 L650 300 Z" stroke-width="2.5"/>
+
+  <!-- pi symbol -->
+  <g stroke-width="3.5">
+    <path d="M250 120 H320"/>
+    <path d="M268 120 V175"/>
+    <path d="M305 120 V175"/>
+  </g>
+
+  <!-- summation (sigma) -->
+  <path d="M360 110 H410 L378 138 L410 168 H360" stroke-width="2.5"/>
+
+  <!-- a few plus / equals marks for texture -->
+  <g stroke-width="2.5">
+    <path d="M620 110 H660 M640 90 V130"/>
+    <path d="M120 360 H160 M120 372 H160"/>
+  </g>
+</svg>
