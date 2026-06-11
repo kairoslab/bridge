@@ -10,8 +10,8 @@ change the site, you edit a file and save it. That's the whole workflow.
 
 | File | What it is |
 |------|------------|
-| `index.html` | **About** page (home) — credentials, bio, teaching philosophy |
-| `services.html` | **Tutoring** page — what you offer and how to schedule |
+| `index.html` | **About** page (home) — bio and credentials |
+| `philosophy.html` | **Teaching Philosophy** page |
 | `resources.html` | **Resources** page — your list of books, sites, and tools |
 | `contact.html` | **Contact** page — how people reach you |
 | `styles.css` | All the styling (colors, fonts, layout) for every page |
@@ -55,7 +55,7 @@ You can edit right on GitHub.com too: click a file, click the pencil icon, make
 changes, and click **Commit changes**. No tools needed.
 
 ### Adding a resource or a tutoring item
-On `resources.html` and `services.html`, items are blocks that look like this:
+On `resources.html`, items are blocks that look like this:
 
 ```html
 <div class="card">
@@ -174,7 +174,7 @@ Within a minute or two, the live site reflects your changes.
 ## Quick reference
 
 - **Change my bio/credentials** → `index.html`
-- **Change what I offer / rates / scheduling** → `services.html`
+- **Change my teaching philosophy** → `philosophy.html`
 - **Add a book or website** → copy a `card` block in `resources.html`
 - **Change my email/phone** → `contact.html`
 - **Change colors or fonts** → top of `styles.css`

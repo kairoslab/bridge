@@ -154,6 +154,25 @@ li { margin: 6px 0; }
 }
 .card p { margin: 0; color: var(--color-muted); }
 
+/* pull-quote (used for the Russell quote on the philosophy page) */
+blockquote {
+  margin: 28px 0;
+  padding: 2px 0 2px 22px;
+  border-left: 3px solid var(--color-rule);
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.18rem;
+  line-height: 1.5;
+}
+blockquote cite {
+  display: block;
+  margin-top: 12px;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
 /* contact details block */
 .contact-line {
   font-size: 1.15rem;
