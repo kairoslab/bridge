@@ -24,11 +24,12 @@
   /* ---------- LAYOUT ---------- */
   --max-width: 720px;       /* content column width */
 
-  /* ---------- BACKGROUND ANIMATION ---------- */
-  /* Controls how visible the animated inkblot behind the page is
-     (assets/blob-bg.js). 0 = invisible, 1 = fully solid black.
-     Keep it low so text stays comfortably readable. */
-  --bg-art-opacity: 0.08;
+  /* ---------- CORNER ORNAMENT ---------- */
+  /* How visible the little animated inkblot in the corner is
+     (assets/blob-bg.js). 1 = solid black, lower = softer. */
+  --ornament-opacity: 0.95;
+  /* Size of the ornament (it's a square). */
+  --ornament-size: 130px;
 }
 
 /* ---------- RESET / BASE ---------- */
@@ -49,21 +50,32 @@ body {
   flex-direction: column;
 }
 
-/* ---------- ANIMATED BACKGROUND LAYER ----------
+/* ---------- ANIMATED CORNER ORNAMENT ----------
    The morphing inkblot (assets/blob-bg.js) draws into a canvas inside
-   this fixed, centered layer that sits behind all content. Its overall
-   visibility is set by --bg-art-opacity above. */
+   this small fixed box tucked into the bottom-right corner. To move it
+   to a different corner, swap `bottom`/`right` for `top`/`left`. Size and
+   opacity are set by the --ornament-* variables above. */
 #blob-bg {
   position: fixed;
-  inset: 0;
-  z-index: -1;
+  bottom: 20px;
+  right: 20px;
+  width: var(--ornament-size);
+  height: var(--ornament-size);
+  z-index: 10;
   pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: var(--bg-art-opacity);
+  opacity: var(--ornament-opacity);
 }
 #blob-bg canvas { display: block; }
+
+/* on small screens, tuck a slightly smaller ornament into the corner */
+@media (max-width: 480px) {
+  #blob-bg {
+    width: calc(var(--ornament-size) * 0.7);
+    height: calc(var(--ornament-size) * 0.7);
+    bottom: 12px;
+    right: 12px;
+  }
+}
 
 /* ---------- LINKS ---------- */
 a {

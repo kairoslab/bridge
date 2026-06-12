@@ -1,15 +1,16 @@
 /* ============================================================
-   ANIMATED BACKGROUND — "Morphing Rorschach Blob"
+   ANIMATED CORNER ORNAMENT — "Morphing Rorschach Blob"
    ------------------------------------------------------------
-   A black inkblot on a transparent layer that restlessly twitches,
-   then snaps to a recognizable shape (circle, scalene right triangle,
-   cloud, bell curve, eye) in random order, holds ~2s, and melts back
-   into free-form blobs. Soft, gooey ink-bleed edges.
+   A small black inkblot that restlessly twitches, then snaps to a
+   recognizable shape (circle, scalene right triangle, cloud, bell
+   curve, eye) in random order, holds ~2s, and melts back into
+   free-form blobs. Soft, gooey ink-bleed edges. It loops forever and
+   always animates.
 
-   It is rendered FAINT and behind the page content so text stays
-   readable. To make it more/less visible, change --bg-art-opacity in
-   styles.css. To turn it off entirely, remove the <script> tag that
-   loads this file from the HTML pages (or set --bg-art-opacity: 0).
+   It sits in the bottom-right corner. To change its size, opacity, or
+   position, edit the --ornament-* variables and the #blob-bg rule in
+   styles.css. To remove it entirely, delete the <script> tag that
+   loads this file from the HTML pages.
 
    This file is self-contained: include it once per page with
      <script defer src="assets/blob-bg.js"></script>
@@ -242,10 +243,11 @@
 
     // ---------- sizing ---------------------------------------------------
 
-    let cssSize = 600, dpr = 1, scale = 3, blurPx = 2.4;
+    let cssSize = 130, dpr = 1, scale = 3, blurPx = 2.4;
     function resize() {
       dpr = Math.min(window.devicePixelRatio || 1, 2);
-      cssSize = Math.min(window.innerWidth, window.innerHeight);
+      // size the canvas to the ornament box (set in styles.css), not the viewport
+      cssSize = layer.clientWidth || 130;
       canvas.style.width = cssSize + "px";
       canvas.style.height = cssSize + "px";
       canvas.width = Math.round(cssSize * dpr);
@@ -294,11 +296,6 @@
 
     // ---------- main loop -----------------------------------------------
 
-    // respect users who prefer reduced motion: draw a single still blob.
-    const reduceMotion =
-      window.matchMedia &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
     let started = 0;
     function frame(ms) {
       const now = ms / 1000;
@@ -343,7 +340,7 @@
       }
 
       render(now);
-      if (!reduceMotion) requestAnimationFrame(frame);
+      requestAnimationFrame(frame); // always animate
     }
     requestAnimationFrame(frame);
   }

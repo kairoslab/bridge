@@ -15,7 +15,7 @@ change the site, you edit a file and save it. That's the whole workflow.
 | `resources.html` | **Resources** page — your list of books, sites, and tools |
 | `contact.html` | **Contact** page — how people reach you |
 | `styles.css` | All the styling (colors, fonts, layout) for every page |
-| `assets/blob-bg.js` | The animated inkblot background |
+| `assets/blob-bg.js` | The animated inkblot ornament in the corner |
 | `README.md` | This guide |
 | `.nojekyll` | A blank file that tells GitHub to serve the site as-is. Leave it alone. |
 
@@ -90,25 +90,22 @@ service like Formspree is used.
 
 ---
 
-## 5. The animated background
+## 5. The animated corner ornament
 
-The faint, morphing inkblot behind the page is an animation drawn by
+The little morphing inkblot in the bottom-right corner is an animation drawn by
 `assets/blob-bg.js`. It restlessly twitches, then snaps between recognizable
 shapes (circle, scalene right triangle, cloud, bell curve, eye) in random order
-before melting back into free-form blobs. It loops forever and adapts to any
-screen size.
+before melting back into free-form blobs. It loops forever and always animates.
 
-Things you can adjust:
+Things you can adjust (all in `styles.css`):
 
-- **Make it fainter or bolder:** change `--bg-art-opacity` in `styles.css`
-  (`0` = invisible, `1` = solid black; `0.08` is the default — keep it low so
-  text stays readable).
-- **Turn it off completely:** either set `--bg-art-opacity: 0`, or delete the
-  line `<script defer src="assets/blob-bg.js"></script>` from the `<head>` of
-  each HTML page.
-- **Accessibility:** visitors whose device is set to "reduce motion"
-  automatically see a single still inkblot instead of the animation — no action
-  needed on your part.
+- **Size:** change `--ornament-size` (e.g. `130px`).
+- **Opacity:** change `--ornament-opacity` (`1` = solid black, lower = softer).
+- **Position:** in the `#blob-bg` rule, swap `bottom`/`right` for `top`/`left`
+  to move it to a different corner, and adjust the `20px` spacing.
+- **Turn it off completely:** delete the line
+  `<script defer src="assets/blob-bg.js"></script>` from the `<head>` of each
+  HTML page.
 - **Tuning the motion** (optional, for the curious): near the top of
   `blob-bg.js` are commented knobs like hold time and twitch amount. You don't
   need to touch these.
@@ -187,5 +184,5 @@ Within a minute or two, the live site reflects your changes.
 - **Add a book or website** → copy a `card` block in `resources.html`
 - **Change my email/phone** → `contact.html`
 - **Change colors or fonts** → top of `styles.css`
-- **Make the background fainter/bolder or turn it off** → `--bg-art-opacity` in `styles.css` (see section 5)
+- **Resize/move/hide the corner ornament** → `--ornament-size` / `--ornament-opacity` / `#blob-bg` in `styles.css` (see section 5)
 - **Change the web address** → section 7 above
