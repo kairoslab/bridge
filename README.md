@@ -92,7 +92,7 @@ service like Formspree is used.
 
 ## 5. The animated corner ornament
 
-The little morphing inkblot in the upper-left, beside your name, is an animation drawn by
+The little morphing inkblot in the upper-right corner is an animation drawn by
 `assets/blob-bg.js`. It restlessly twitches, then snaps between recognizable
 shapes (circle, scalene right triangle, cloud, bell curve, eye) in random order
 before melting back into free-form blobs. It loops forever and always animates.
@@ -101,9 +101,9 @@ Things you can adjust (all in `styles.css`):
 
 - **Size:** change `--ornament-size` (e.g. `130px`).
 - **Opacity:** change `--ornament-opacity` (`1` = solid black, lower = softer).
-- **Position:** in the `#blob-bg` rule, edit the `top` / `left` values to nudge
+- **Position:** in the `#blob-bg` rule, edit the `top` / `right` values to nudge
   it. (There are two: one for narrow screens, one inside the `min-width: 1000px`
-  block for wide screens where it tucks beside the name.)
+  block for wide screens.)
 - **Turn it off completely:** delete the line
   `<script defer src="assets/blob-bg.js"></script>` from the `<head>` of each
   HTML page.

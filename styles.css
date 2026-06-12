@@ -52,13 +52,13 @@ body {
 
 /* ---------- ANIMATED CORNER ORNAMENT ----------
    The morphing inkblot (assets/blob-bg.js) draws into a canvas inside this
-   box. It scrolls with the page and is parked at the top-left, up by the
-   header beside your name. Size/opacity come from the --ornament-* variables
-   above. To nudge its exact position, edit `top` / `left` below. */
+   box. It scrolls with the page and is parked at the top-right, up by the
+   header. Size/opacity come from the --ornament-* variables above. To nudge
+   its exact position, edit `top` / `right` below. */
 #blob-bg {
   position: absolute;
   top: 6px;
-  left: -6px;                 /* small screens: tuck into the top-left corner */
+  right: -6px;                /* small screens: tuck into the top-right corner */
   width: calc(var(--ornament-size) * 0.62);
   height: calc(var(--ornament-size) * 0.62);
   z-index: 10;
@@ -67,12 +67,12 @@ body {
 }
 #blob-bg canvas { display: block; }
 
-/* wide screens have room to nestle the full-size ornament right beside the
-   name, just left of the centered content column. */
+/* wide screens have room for the full-size ornament, just outside the right
+   edge of the centered content column. */
 @media (min-width: 1000px) {
   #blob-bg {
     top: 4px;
-    left: calc(50% - (var(--max-width) / 2) - var(--ornament-size) * 0.66);
+    right: calc(50% - (var(--max-width) / 2) - var(--ornament-size) * 0.66);
     width: var(--ornament-size);
     height: var(--ornament-size);
   }
