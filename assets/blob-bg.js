@@ -7,10 +7,10 @@
    free-form blobs. Soft, gooey ink-bleed edges. It loops forever and
    always animates.
 
-   It sits in the bottom-right corner. To change its size, opacity, or
-   position, edit the --ornament-* variables and the #blob-bg rule in
-   styles.css. To remove it entirely, delete the <script> tag that
-   loads this file from the HTML pages.
+   It sits in the upper-left corner, up by the header beside the name. To
+   change its size, opacity, or position, edit the --ornament-* variables
+   and the #blob-bg rule in styles.css. To remove it entirely, delete the
+   <script> tag that loads this file from the HTML pages.
 
    This file is self-contained: include it once per page with
      <script defer src="assets/blob-bg.js"></script>
