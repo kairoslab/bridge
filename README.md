@@ -15,7 +15,7 @@ change the site, you edit a file and save it. That's the whole workflow.
 | `resources.html` | **Resources** page — your list of books, sites, and tools |
 | `contact.html` | **Contact** page — how people reach you |
 | `styles.css` | All the styling (colors, fonts, layout) for every page |
-| `assets/background.svg` | The faint background illustration |
+| `assets/blob-bg.js` | The animated inkblot background |
 | `README.md` | This guide |
 | `.nojekyll` | A blank file that tells GitHub to serve the site as-is. Leave it alone. |
 
@@ -90,19 +90,28 @@ service like Formspree is used.
 
 ---
 
-## 5. Changing the background art
+## 5. The animated background
 
-1. Create your illustration — **black "pen" lines on a transparent or white
-   background** look best with the light theme.
-2. Save it as `assets/background.svg`, replacing the placeholder file.
-   - If your file is a PNG or JPG instead of an SVG, name it
-     `background.png` (or `.jpg`) and update **one line** in `styles.css`:
-     find `background-image: url("assets/background.svg");` and change the
-     filename to match.
-3. To make the art more or less visible, change `--bg-art-opacity` in
-   `styles.css` (`0` = invisible, `1` = fully solid; `0.08` is the default).
-4. To move it, edit `background-position` (e.g. `center bottom`, `right top`)
-   and `background-size` in the `.bg-art` block of `styles.css`.
+The faint, morphing inkblot behind the page is an animation drawn by
+`assets/blob-bg.js`. It restlessly twitches, then snaps between recognizable
+shapes (circle, scalene right triangle, cloud, bell curve, eye) in random order
+before melting back into free-form blobs. It loops forever and adapts to any
+screen size.
+
+Things you can adjust:
+
+- **Make it fainter or bolder:** change `--bg-art-opacity` in `styles.css`
+  (`0` = invisible, `1` = solid black; `0.08` is the default — keep it low so
+  text stays readable).
+- **Turn it off completely:** either set `--bg-art-opacity: 0`, or delete the
+  line `<script defer src="assets/blob-bg.js"></script>` from the `<head>` of
+  each HTML page.
+- **Accessibility:** visitors whose device is set to "reduce motion"
+  automatically see a single still inkblot instead of the animation — no action
+  needed on your part.
+- **Tuning the motion** (optional, for the curious): near the top of
+  `blob-bg.js` are commented knobs like hold time and twitch amount. You don't
+  need to touch these.
 
 ---
 
@@ -178,5 +187,5 @@ Within a minute or two, the live site reflects your changes.
 - **Add a book or website** → copy a `card` block in `resources.html`
 - **Change my email/phone** → `contact.html`
 - **Change colors or fonts** → top of `styles.css`
-- **Change the background drawing** → replace `assets/background.svg`
+- **Make the background fainter/bolder or turn it off** → `--bg-art-opacity` in `styles.css` (see section 5)
 - **Change the web address** → section 7 above

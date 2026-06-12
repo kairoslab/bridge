@@ -24,9 +24,10 @@
   /* ---------- LAYOUT ---------- */
   --max-width: 720px;       /* content column width */
 
-  /* ---------- BACKGROUND ILLUSTRATION ---------- */
-  /* Controls the faint art behind the page (assets/background.svg).
-     0 = invisible, 1 = fully opaque. Keep it low so text stays readable. */
+  /* ---------- BACKGROUND ANIMATION ---------- */
+  /* Controls how visible the animated inkblot behind the page is
+     (assets/blob-bg.js). 0 = invisible, 1 = fully solid black.
+     Keep it low so text stays comfortably readable. */
   --bg-art-opacity: 0.08;
 }
 
@@ -48,21 +49,21 @@ body {
   flex-direction: column;
 }
 
-/* ---------- BACKGROUND ILLUSTRATION LAYER ----------
-   This fixed layer sits behind everything. To change the art, just
-   replace the file assets/background.svg (see README). To move it,
-   edit background-position / background-size below. */
-.bg-art {
+/* ---------- ANIMATED BACKGROUND LAYER ----------
+   The morphing inkblot (assets/blob-bg.js) draws into a canvas inside
+   this fixed, centered layer that sits behind all content. Its overall
+   visibility is set by --bg-art-opacity above. */
+#blob-bg {
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background-image: url("assets/background.svg");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: min(820px, 88%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: var(--bg-art-opacity);
 }
+#blob-bg canvas { display: block; }
 
 /* ---------- LINKS ---------- */
 a {
