@@ -94,8 +94,9 @@ service like Formspree is used.
 
 The little morphing inkblot in the upper-right corner is an animation drawn by
 `assets/blob-bg.js`. It restlessly twitches, then snaps between recognizable
-shapes (circle, scalene right triangle, cloud, bell curve, eye) in random order
-before melting back into free-form blobs. It loops forever and always animates.
+shapes (circle, scalene right triangle, cloud, bell curve, ginkgo leaf,
+"Holdingpen", eye) in random order before melting back into free-form blobs. It
+loops forever and always animates.
 
 Things you can adjust (all in `styles.css`):
 
